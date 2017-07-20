@@ -1,0 +1,75 @@
+﻿@model CargaApi.Models.Item
+@{
+    ViewBag.Title = "Poc Test de Carga Api";
+}
+<div class="jumbotron">
+    <h1>POC Teste de Carga </h1>
+    <p class="lead">Jmeter e WebPerformance &Aacute; Load Performance (VS)</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>JMeter</h2>
+        <p> 1. Para Entender como funciona a configuração de Carga de Stress Test via API <a href="~/Content/Document/JMeter_Configuracao_Api_Banco_Bat.docx" target="_blank"> Clique Aqui</a> e faça download do Manual de Configuração.</p>
+        <p> 2. Para baixar a POC de Configuração <a href="~/Content/Document/POC.jmx" target="_blank"> Clique Aqui!</a> </p>
+        <p> 3. Para instalar o JMeter basta efetuar o download no site <a href="http://jmeter.apache.org" target="_blank"> http://jmeter.apache.org </a>.</p>
+
+        <h2>Web Perfomance Teste e Load Test project do Visual Studio</h2>
+        <p> 1. No projeto de Arquitetura base na Feature Test temos um CRUD de Produtos que aproveitamos para fazer os testes via End Point, por esta ferramenta</p>
+        <p> 2. O Projeto de Teste se encontra na Solution Tabata com o nome "CargaApiTest", já previamente configurado.</p>
+        <p> 3. O WBT do Visual Studio só comporta Post ou Get sem uma routa específica para o método.</p>
+    </div>
+@using (Html.BeginForm())
+{ 
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Altura)
+            </th>
+            <th>
+               Ação
+            </th>
+            <th>
+                Resultado
+            </th>
+        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Idade)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Altura)
+                </td>
+                <td>
+                    <input type="submit" value="Calcula" />
+                 </td>
+                <td>
+                    @ViewBag.IMC
+                </td>
+            </tr>
+        
+    </table>
+}
+
+</div>
