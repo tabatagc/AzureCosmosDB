@@ -31,7 +31,7 @@
             if (ModelState.IsValid)
             {
                 await DocumentDBRepository<Item>.CreateItemAsync(item);
-                return RedirectToAction("Index");    
+                return RedirectToAction("Index");
             }
 
             return View(item);
